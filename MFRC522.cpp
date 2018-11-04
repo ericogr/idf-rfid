@@ -1513,13 +1513,16 @@ void MFRC522::PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to U
 			ESP_LOGI(TAG, "    ");
 		}
 		// Block number
-		if(blockAddr < 10)
+		if(blockAddr < 10) {
 			ESP_LOGI(TAG, "   ");
+		}
 		else {
-			if(blockAddr < 100)
+			if(blockAddr < 100) {
 				ESP_LOGI(TAG, "   ");
-			else
+			}
+			else {
 				ESP_LOGI(TAG, " ");
+			}
 		}
 		ESP_LOGI(TAG, "%d  ", blockAddr);
 		// Establish encrypted communications before reading the first block
